@@ -56,33 +56,46 @@ function Box() {
     renderer.setSize(canvas.clientWidth, canvas.clientHeight)
     canvas.appendChild(renderer.domElement)
 
+    // Add both mouse and touch event listeners
     let isDragging = false
     let previousMousePosition = { x: 0, y: 0 }
 
-    canvas.addEventListener('mousedown', (event) => {
+    const handlePointerDown = (event) => {
+      event.preventDefault()
       isDragging = true
       previousMousePosition = {
         x: event.clientX,
         y: event.clientY,
       }
-    })
+    }
 
-    canvas.addEventListener('mousemove', (event) => {
+    const handlePointerMove = (event) => {
+      event.preventDefault()
       if (isDragging) {
-        const deltaX = event.clientX - previousMousePosition.x
-        const deltaY = event.clientY - previousMousePosition.y
+        const clientX =
+          event.clientX || (event.touches && event.touches[0].clientX)
+        const clientY =
+          event.clientY || (event.touches && event.touches[0].clientY)
+
+        const deltaX = clientX - previousMousePosition.x
+        const deltaY = clientY - previousMousePosition.y
         mesh.rotation.x += deltaY * 0.01
         mesh.rotation.y += deltaX * 0.01
+
         previousMousePosition = {
-          x: event.clientX,
-          y: event.clientY,
+          x: clientX,
+          y: clientY,
         }
       }
-    })
+    }
 
-    canvas.addEventListener('mouseup', () => {
+    const handlePointerUp = () => {
       isDragging = false
-    })
+    }
+
+    canvas.addEventListener('pointerdown', handlePointerDown)
+    canvas.addEventListener('pointermove', handlePointerMove)
+    canvas.addEventListener('pointerup', handlePointerUp)
 
     function animate() {
       requestAnimationFrame(animate)
@@ -96,7 +109,16 @@ function Box() {
     }
   }, [])
 
-  return <div ref={canvasRef} style={{ width: '30rem', height: '30rem' }} />
+  return (
+    <div
+      ref={canvasRef}
+      style={{
+        margin: '-1rem',
+        width: window.innerWidth,
+        height: window.innerHeight / 1.6,
+      }}
+    />
+  )
 }
 
 export default Box
