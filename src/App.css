@@ -1,0 +1,73 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+.droid-arabic-kufi {
+  font-family: 'Droid Arabic Kufi', serif;
+}
+
+.backgruand {
+  width: 100vw;
+  height: 100vh;
+  background: #161415  url('./assests/header-full.jpg') no-repeat top center;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+@media only screen and (max-width: 1000px) {
+  .backgruand {
+    background-position: right !important;
+    height: 250vh;
+  }
+  .container {
+    margin: 0;
+  }
+
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-space-evently {
+  justify-content: space-between;
+}
+.curser-pointer {
+  cursor: pointer;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.width-50 {
+  width: 50%;
+}
+.width-100 {
+  width: 100%;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
