@@ -96,7 +96,7 @@ function Box() {
     }
   }, [])
 
-  return <div ref={canvasRef} style={{ width: '100vw', height: '100vh' }} />
+  return <div ref={canvasRef} style={{ width: '30rem', height: '30rem' }} />
 }
 
 export default Box

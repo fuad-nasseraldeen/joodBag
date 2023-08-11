@@ -19,6 +19,7 @@ export interface OwnProps {
 }
 
 const Home = (props: OwnProps) => {
+    const isMobile = window.innerWidth <= 600
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -44,12 +45,12 @@ const Home = (props: OwnProps) => {
                             <h1>{details.name}</h1>
                             <h2>{details.description}</h2>
                             {window.innerWidth <= 600 &&
-                                // <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img>
+                                // <img src="./kids-jood.png" alt=""></img>
                                 <Box />
                             }
                             <div className="white-divider"></div>
                         </div>
-
+                        {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
                     </Col>
                 </Row>
                 <Row className='container width-100 flex justify-space-evently'>
