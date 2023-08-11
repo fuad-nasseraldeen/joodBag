@@ -4,6 +4,7 @@ import { Col, Row } from 'react-bootstrap'
 import './Home.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import details from '../../details.js'
+import Box from '../../3d/Three'
 // import ReactPlayer from 'react-player'
 // import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
 // // @ts-ignore
@@ -37,13 +38,14 @@ const Home = (props: OwnProps) => {
     return (
         <React.Fragment>
             <section id='home'>
-                <Row className='container width-100 flex justify-center'>
+                <Row className='container flex justify-center'>
                     <Col>
                         <div className='flex flex-col align-items-center'>
                             <h1>{details.name}</h1>
                             <h2>{details.description}</h2>
                             {window.innerWidth <= 600 &&
-                                <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img>
+                                // <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img>
+                                <Box />
                             }
                             <div className="white-divider"></div>
                         </div>
@@ -78,7 +80,8 @@ const Home = (props: OwnProps) => {
                     <Col>
                         <div className='img-container'>
                             {window.innerWidth > 600 &&
-                                <img src="./kids-jood.png" alt=""></img>
+                                // <img src="./kids-jood.png" alt=""></img>
+                                <Box />
                             }
                         </div>
                     </Col>
