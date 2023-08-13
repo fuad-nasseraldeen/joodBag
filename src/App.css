@@ -5,19 +5,17 @@
 }
 
 .backgruand {
-  top: 60px;
-  position: relative;
+  top: 65px;
+  position: absolute;
   width: 100vw;
   height: 200vh;
-  background: #161415  url('./assests/header-full.jpg') no-repeat top center;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
+  background: #161415 url('./assests/header-full1.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center 70px;
 }
 @media only screen and (max-width: 1000px) {
   .backgruand {
-    background-position: right !important;
     height: 400vh;
   }
   .container {

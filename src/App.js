@@ -2,6 +2,7 @@ import Home from './pages/Home/Home.tsx'
 import './App.css'
 import NavBar from './pages/Navbar/Nav.tsx'
 import joodDetails from './details.js'
+
 function App() {
   return (
     <div className='droid-arabic-kufi backgruand' dir='rtl'>
