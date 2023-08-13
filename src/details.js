@@ -1,6 +1,6 @@
 let joodDetails = {
   name: 'حقيبة جود',
-  description: 'حقيبة كاملة وشاملة لتحضير الصف الاول',
+  description: 'حقيبة كاملة وشاملة لتحضير للصف الاول',
   bagInfoName: 'محتويات الحقيبة',
   bagInfoDetails: [
     {
@@ -60,7 +60,7 @@ let joodDetails = {
       name: 'instagram',
       url: 'https://www.instagram.com/hesenjaber.ot/',
       className: 'fa fa-instagram',
-      img: 'https://img.icons8.com/doodle/28/instagram-new.png',
+      img: 'https://img.icons8.com/fluency/48/instagram-new.png',
     },
     {
       name: 'facebook',

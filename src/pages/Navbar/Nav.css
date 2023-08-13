@@ -120,10 +120,11 @@
 .contactUs {
   font-size: small;
   color: rgba(181,136,167,1);
+  padding-bottom: 10px;
 }
 .padding-left {
   padding-left: 20px;
 }
 .padding-top {
-  padding-top: 10px
+  padding-top: 15px
 }

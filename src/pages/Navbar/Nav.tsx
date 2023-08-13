@@ -32,7 +32,7 @@ function NavBar() {
                                     rel='noopener noreferrer'
                                     className=''
                                 >
-                                    <img src={item!.img} width={18} className='margin-whatsapp' alt='whatsapp' />
+                                    <img src={item!.img} width={28} className='margin-whatsapp' alt='whatsapp' />
                                 </a>
                             </Nav.Item>
                         )
