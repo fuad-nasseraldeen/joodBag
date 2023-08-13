@@ -27,9 +27,26 @@ h1 {
 h2 {
     text-align: center;
 }
+h4 {
+    margin: 0px;
+    padding-right: 50px;
+}
 ol {
     list-style-type: square;
 }
 .gap-5 {
     gap: 5px
+}
+.container { 
+
+}
+.card {
+
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+.card:hover {
+    box-shadow: 0 2px 8px 0 rgba(34, 33, 46, 0.5);
 }

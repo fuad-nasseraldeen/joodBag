@@ -14,12 +14,12 @@ function Box() {
     const canvas = canvasRef.current
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
-      70,
+      75,
       canvas.clientWidth / canvas.clientHeight,
-      0.01,
-      10,
+      0.1,
+      1000,
     )
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+    const renderer = new THREE.WebGLRenderer()
     renderer.setClearColor(0x000000, 0) // Black color, 0 alpha (transparent)
 
     const textureLoader = new THREE.TextureLoader()
@@ -61,26 +61,23 @@ function Box() {
     let previousMousePosition = { x: 0, y: 0 }
 
     const handlePointerDown = (event) => {
-      event.preventDefault()
       isDragging = true
       previousMousePosition = {
-        x: event.clientX,
-        y: event.clientY,
+        x: event.clientX || event.touches[0].clientX,
+        y: event.clientY || event.touches[0].clientY,
       }
     }
 
     const handlePointerMove = (event) => {
-      event.preventDefault()
       if (isDragging) {
-        const clientX =
-          event.clientX || (event.touches && event.touches[0].clientX)
-        const clientY =
-          event.clientY || (event.touches && event.touches[0].clientY)
+        const clientX = event.clientX || event.touches[0].clientX
+        const clientY = event.clientY || event.touches[0].clientY
 
         const deltaX = clientX - previousMousePosition.x
         const deltaY = clientY - previousMousePosition.y
-        mesh.rotation.x += deltaY * 0.01
-        mesh.rotation.y += deltaX * 0.01
+
+        mesh.rotation.x += deltaY * 0.005
+        mesh.rotation.y += deltaX * 0.005
 
         previousMousePosition = {
           x: clientX,

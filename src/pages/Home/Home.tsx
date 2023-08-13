@@ -4,7 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 import './Home.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import details from '../../details.js'
-import Box from '../../3d/Three'
+import Box3D from '../../3d/Three'
+import ThreeScene from '../../3d/Temps.tsx'
 // import ReactPlayer from 'react-player'
 // import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
 // // @ts-ignore
@@ -45,50 +46,53 @@ const Home = (props: OwnProps) => {
                             <h1>{details.name}</h1>
                             <h2>{details.description}</h2>
                             {window.innerWidth <= 600 &&
-                                // <img src="./kids-jood.png" alt=""></img>
-                                <Box />
+                                <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                // <Box3D />
                             }
                             <div className="white-divider"></div>
                         </div>
                         {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
                     </Col>
                 </Row>
-                <Row className='container width-100 flex justify-space-evently'>
+                <Row className='card container width-100 flex justify-space-evently'>
                     <Col>
                         <h2>{details.bagInfoName}</h2>
                         {details.bagInfoDetails.map((item, i) => {
                             return (
-                                <div key={i}>
+                                <div key={i} className=''>
                                     <div className="flex align-items-center gap-5 cheked">
                                         <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/checked-radio-button.png" alt="checked-radio-button" />
                                         <h3>{item.name}</h3>
                                     </div>
-                                    {item.description && (
-                                        <ol>
+                                    <h4>{item.description}</h4>
+                                    <div className="flex justify-center gap-10 flex-wrap">
+                                        {item.url && (
 
-                                            {item.description.map((item, key) => {
-                                                return (<li><h5>{item}</h5></li>)
+                                            item.url.map((entity, i) => {
+                                                return (<img className="card" width={item.width} height={item.height} src={entity
+                                                } alt="" ></img>)
                                             })
-                                            }
 
-                                        </ol>
-                                    )}
+
+                                        )
+                                        }
+                                    </div>
 
                                 </div>
                             )
                         })}
                     </Col>
-                    <Col>
+                    {/* <Col>
                         <div className='img-container'>
                             {window.innerWidth > 600 &&
                                 // <img src="./kids-jood.png" alt=""></img>
-                                <Box />
+                                <Box3D />
                             }
                         </div>
-                    </Col>
+                    </Col> */}
                 </Row>
             </section>
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 export default Home

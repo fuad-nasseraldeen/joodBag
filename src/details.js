@@ -5,22 +5,34 @@ let joodDetails = {
   bagInfoDetails: [
     {
       name: 'كراسات تعليمية',
-      description: [
-        'كراسة المفاهيم الاساسية ',
-        'كراسة  الارقام',
-        'كراسة الحروف',
-      ],
+      // description: [
+      //   'كراسة المفاهيم الاساسية ',
+      //   'كراسة  الارقام',
+      //   'كراسة الحروف',
+      // ],
+      url: ['./book/book1.jpg', './book/book2.jpg', './book/book3.jpg'],
+      width: '180px',
+      height: '240px',
     },
     {
       name: 'لوازم مدرسية',
+      url: ['./school-supplies.png'],
+      width: '150px',
+      height: '240px',
     },
     {
       name: 'مسطرة حروف ومسطرة ارقام ',
       description: ['لتساعد الطفل في الحل كأدوات مساعدة'],
+      url: ['./rollers.png'],
+      width: '148px',
+      height: '230px',
     },
     {
       name: 'بطاقات',
       description: ['بطاقات لتدريب على مهارات القص بدرجات صعوبة مختلفة'],
+      url: ['./cards.png'],
+      width: '370px',
+      height: '250px',
     },
   ],
   age: 'ملائمة من جيل 4.5 +',
@@ -33,6 +45,7 @@ let joodDetails = {
     'logo6.jpg',
     'logo7.jpg',
   ],
+
   socialLinks: [
     {
       name: 'instagram',
