@@ -58,7 +58,7 @@ let joodDetails = {
   socialLinks: [
     {
       name: 'instagram',
-      url: 'https://www.instagram.com/hesefanjaber.ot/',
+      url: 'https://www.instagram.com/hesenjaber.ot/',
       className: 'fa fa-instagram',
       img: 'https://img.icons8.com/doodle/28/instagram-new.png',
     },
