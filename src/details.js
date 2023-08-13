@@ -58,13 +58,13 @@ let joodDetails = {
   socialLinks: [
     {
       name: 'instagram',
-      url: 'https://www.instagram.com/topclinicjaber/',
+      url: 'https://www.instagram.com/hesefanjaber.ot/',
       className: 'fa fa-instagram',
       img: 'https://img.icons8.com/doodle/28/instagram-new.png',
     },
     {
       name: 'facebook',
-      url: 'https://www.facebook.com/fuad.naseraldeen/',
+      url: 'https://www.facebook.com/profile.php?id=61550307714098',
       className: 'fa fa-facebook',
       img: 'https://img.icons8.com/doodle/28/facebook-new.png',
     },
