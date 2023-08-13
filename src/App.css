@@ -5,8 +5,10 @@
 }
 
 .backgruand {
+  top: 60px;
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   background: #161415  url('./assests/header-full.jpg') no-repeat top center;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -16,7 +18,7 @@
 @media only screen and (max-width: 1000px) {
   .backgruand {
     background-position: right !important;
-    height: 250vh;
+    height: 400vh;
   }
   .container {
     margin: 0;
@@ -77,3 +79,12 @@
   height: auto;
 }
 
+.bottom-span {
+  position: fixed;
+  left: 2%;
+  /* transform: translateX(-50%); */
+  bottom: 20px; /* Adjust this value to control the distance from the bottom */
+
+  padding: 10px 20px;
+  border-radius: 5px;
+}

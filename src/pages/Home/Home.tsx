@@ -20,7 +20,7 @@ export interface OwnProps {
 }
 
 const Home = (props: OwnProps) => {
-    const isMobile = window.innerWidth <= 600
+    const isMobile = window.innerWidth <= 450
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -49,12 +49,12 @@ const Home = (props: OwnProps) => {
                                 <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
                                 // <Box3D />
                             }
-                            <div className="white-divider"></div>
+                            {/* <div className="white-divider"></div> */}
                         </div>
                         {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
                     </Col>
                 </Row>
-                <Row className='card container width-100 flex justify-space-evently'>
+                <Row className='container width-100 flex justify-space-evently'>
                     <Col>
                         <h2>{details.bagInfoName}</h2>
                         {details.bagInfoDetails.map((item, i) => {
@@ -69,8 +69,17 @@ const Home = (props: OwnProps) => {
                                         {item.url && (
 
                                             item.url.map((entity, i) => {
-                                                return (<img className="card" width={item.width} height={item.height} src={entity
-                                                } alt="" ></img>)
+                                                return (
+                                                    <div className="tooltip">
+                                                        <span className="tooltiptext">اضغط لعرض التفاصيل</span>
+                                                        <img className="card"
+                                                            width={isMobile ? (parseInt(item.width) * item.mobileDemention) + 'px' : item.width + 'px'}
+                                                            height={isMobile ? (parseInt(item.height) * item.mobileDemention) + 'px' : item.height + 'px'}
+                                                            src={entity} alt="" >
+
+                                                        </img>
+                                                    </div>
+                                                )
                                             })
 
 
