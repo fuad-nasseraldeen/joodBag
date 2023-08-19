@@ -1,0 +1,129 @@
+.darkBG {
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background-color :rgb(34 33 46 / 84%);
+    width: 100vw;
+    height: 250vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .top {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    /* transform: translate(-50%, -50%); */
+  }
+  .overflow {
+    overflow: auto;
+  }
+  .modal {
+    position: relative;
+    background: white;
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  }
+  
+  .modalHeader {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  
+  .heading {
+    margin: 0;
+    padding: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .modalContent {
+    padding: 10px;
+    font-size: 14px;
+    color: #2c3e50;
+    text-align: center;
+    padding-bottom: 10rem !important;
+  }
+  
+  .modalActions {
+    background: whitesmoke;
+    position: absolute;
+    bottom: 0; /* Update this line */
+    left: 0; /* Add this line */
+    width: 90%;
+    z-index: 20;
+    border-radius: 10% 10% 0 0;
+  }
+  
+  .actionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .closeBtn {
+    cursor: pointer;
+    font-weight: 500;
+    /* padding: 4px 8px; */
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: rgb(231 150 84);
+    background: whitesmoke;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+    z-index: 20;
+    
+  }
+  
+  .closeBtn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    background: rgb(231 150 84);
+    transform: translate(-4px, 4px);
+  }
+  
+  .okBtn {
+    margin-top: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0px 55px;
+    border-radius: 12px;
+    font-size: 2rem;
+    border: #2c3e50;
+    color: rgb(231 150 84);
+    background: whitesmoke;
+    transition: all 0.25s ease;
+  }
+  
+  .okBtn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    background: rgb(231 150 84);
+    transform: translate(-4px, 4px);
+  }
+  @media only screen and (max-width: 1024px) {
+    .modal {
+      max-height: 60rem;
+    }
+  }
