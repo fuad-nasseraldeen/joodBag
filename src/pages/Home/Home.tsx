@@ -138,7 +138,6 @@ const Home = (props: OwnProps) => {
                                         <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/checked-radio-button.png" alt="checked-radio-button" />
                                         <h3>{item.name}</h3>
                                     </div>
-                                    <h4>{item.description}</h4>
                                     <div className="flex justify-center gap-10 flex-wrap">
                                         {item.url && (
 
@@ -178,7 +177,7 @@ const Home = (props: OwnProps) => {
                 </Row>
                 <div className="white-divider"></div>
                 <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' url={'./jood-bag-details.mp4'} playing={true} controls /></div>
+                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
                 </Col>
             </section>
         </React.Fragment >

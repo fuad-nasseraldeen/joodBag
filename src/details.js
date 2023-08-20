@@ -12,7 +12,7 @@ let joodDetails = {
         'كراسة  الارقام',
       ],
       description: [
-        ['./logo4.jpg', './logo3.jpg'],
+        ['./logo4.jpg', './logo3.jpg', './logo3.jpg'],
         ['./logo5.jpg'],
         ['./logo6.jpg'],
       ],
