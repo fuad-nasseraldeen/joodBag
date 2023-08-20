@@ -55,8 +55,11 @@ const Home = (props: OwnProps) => {
                     {indexOfTheBook}
                 </div>
                 <div className='thumbnail-container'>
+                    <span>المحتويات</span>
+                    <img src={'./logo6.jpg'} className='item-img' id='thumbnail' width={width} loading='lazy' alt='hackathon' />
+                    <span>الشرح</span>
                     <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                        <ReactPlayer key='unique-key' width={'100%'} height={'71vh'} url={bookVideo} playing={true} controls />
+                        <ReactPlayer key='unique-key' width={width} height={'71vh'} url={bookVideo} playing={true} controls />
                         {/* <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR0MXv32W_pBzaAnQRs7A88Ix-Xp9DsMxPyp1xMcmTa8syFnflJ7m506SZfElcs8w/embed?start=true&loop=true&delayms=2000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> */}
                     </Col>
                     {/* <img src={'./jood-bag-desgin.png'} className='item-img' id='thumbnail' width={'500rem'} height={'500rem'} loading='lazy' alt='hackathon' /> */}
@@ -141,6 +144,10 @@ const Home = (props: OwnProps) => {
                         </div>
                     </Col> */}
                 </Row>
+                <div className="white-divider"></div>
+                <Col xs={12} sm={12} md={12} className='flex justify-center'>
+                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
+                </Col>
             </section>
         </React.Fragment >
     )

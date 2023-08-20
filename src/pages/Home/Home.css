@@ -135,3 +135,7 @@ ol {
       opacity: 1;
     }
   }
+
+  .border-radius {
+    border-radius: 50%;
+  }

@@ -8,6 +8,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
+    height: -webkit-fill-available;
   }
   .center {
     position: fixed;
@@ -30,6 +31,7 @@
     color: white;
     border-radius: 16px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    height: -webkit-fill-available;
   }
   
   .modalHeader {

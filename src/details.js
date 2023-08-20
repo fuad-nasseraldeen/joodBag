@@ -11,7 +11,7 @@ let joodDetails = {
       //   'كراسة  الارقام',
       //   'كراسة الحروف',
       // ],
-      url: ['./book/book1.jpg', './book/book2.jpg', './book/book3.jpg'],
+      url: ['./book/book1.jpg', './book/book3.jpg', './book/book2.jpg'],
       width: '180',
       height: '240',
       mobileDemention: 1,
