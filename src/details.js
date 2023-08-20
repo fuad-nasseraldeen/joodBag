@@ -5,6 +5,7 @@ let joodDetails = {
   bagInfoDetails: [
     {
       name: 'كراسات تعليمية',
+      professionalName: 'book',
       // description: [
       //   'كراسة المفاهيم الاساسية ',
       //   'كراسة  الارقام',
@@ -17,6 +18,7 @@ let joodDetails = {
     },
     {
       name: 'لوازم مدرسية',
+      professionalName: 'supplies',
       url: ['./school-supplies.png'],
       width: '380',
       height: '240',
@@ -24,6 +26,7 @@ let joodDetails = {
     },
     {
       name: 'مسطرة حروف ومسطرة ارقام ',
+      professionalName: 'rollers',
       description: ['لتساعد الطفل في الحل كأدوات مساعدة'],
       url: ['./rollers.png'],
       width: '148',
