@@ -80,7 +80,7 @@ const Home = (props: OwnProps) => {
         const width = window.innerWidth - (window.innerWidth * 0.2)
         const headerContent = details.bagInfoDetails.find(item => item.professionalName === 'book')?.nameOfTheBooks?.[indexOfTheBook - 1]
         const description = details.bagInfoDetails.find(item => item.professionalName === 'book')?.description
-        console.log(description)
+
         const bookVideo = `./book/details/book${indexOfTheBook}.mp4`
         const modalBody = (
             <div className='flex flex-col items-center padding'>
@@ -178,7 +178,7 @@ const Home = (props: OwnProps) => {
                 </Row>
                 <div className="white-divider"></div>
                 <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
+                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' url={'./jood-bag-details.mp4'} playing={true} controls /></div>
                 </Col>
             </section>
         </React.Fragment >
