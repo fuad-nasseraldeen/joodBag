@@ -8,7 +8,7 @@ import Modal from '../../Utils/Modal/Modal.tsx'
 import details from '../../details.js'
 import Box3D from '../../3d/Three'
 // import ThreeScene from '../../3d/Temps.tsx'
-// import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player'
 // import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
 // // @ts-ignore
 // import Spinner from '../../layouts/Spinner/Spinner.tsx'
@@ -34,9 +34,11 @@ const Home = (props: OwnProps) => {
 
 
     const prepareModal = (name, index) => {
-        setIsOpen(!isOpen)
-        setProfessionalName(name)
-        setIndexOfTheBook(index)
+        if (name === 'book') {
+            setIsOpen(!isOpen)
+            setProfessionalName(name)
+            setIndexOfTheBook(index)
+        }
 
     }
     const setIsOpenAndIndex = () => {
@@ -46,13 +48,18 @@ const Home = (props: OwnProps) => {
     const modal = () => {
         const width = window.innerWidth - (window.innerWidth * 0.2)
         const headerContent = professionalName
+        const bookVideo = `./book/details/book${indexOfTheBook}.mp4`
         const modalBody = (
             <div className='flex flex-col items-center'>
                 <div>
                     {indexOfTheBook}
                 </div>
                 <div className='thumbnail-container'>
-                    <img src={'./jood-bag-desgin.png'} className='item-img' id='thumbnail' width={'500rem'} height={'500rem'} loading='lazy' alt='hackathon' />
+                    <Col xs={12} sm={12} md={12} className='flex justify-center'>
+                        <ReactPlayer key='unique-key' width={'100%'} height={'71vh'} url={bookVideo} playing={true} controls />
+                        {/* <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR0MXv32W_pBzaAnQRs7A88Ix-Xp9DsMxPyp1xMcmTa8syFnflJ7m506SZfElcs8w/embed?start=true&loop=true&delayms=2000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> */}
+                    </Col>
+                    {/* <img src={'./jood-bag-desgin.png'} className='item-img' id='thumbnail' width={'500rem'} height={'500rem'} loading='lazy' alt='hackathon' /> */}
                 </div>
             </div>
         )
@@ -104,7 +111,7 @@ const Home = (props: OwnProps) => {
                                                 return (
                                                     <div className="tooltip reveal fade-bottom card" onClick={() => prepareModal(item.professionalName, i + 1)}>
                                                         <RevealScroll>
-                                                            <span className="tooltiptext">اضغط لعرض التفاصيل</span>
+                                                            {item.professionalName === 'book' && <span className="tooltiptext">اضغط لعرض التفاصيل</span>}
                                                             <img
                                                                 width={isMobile ? (parseInt(item.width) * item.mobileDemention) + 'px' : item.width + 'px'}
                                                                 height={isMobile ? (parseInt(item.height) * item.mobileDemention) + 'px' : item.height + 'px'}
