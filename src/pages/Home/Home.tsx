@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
-// import { Carousel } from 'react-responsive-carousel'
+import { Carousel } from 'react-responsive-carousel'
 import './Home.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import RevealScroll from '../../Utils/RevealScroll.tsx'
@@ -9,7 +9,7 @@ import details from '../../details.js'
 import Box3D from '../../3d/Three'
 // import ThreeScene from '../../3d/Temps.tsx'
 import ReactPlayer from 'react-player'
-// import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
+import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
 // // @ts-ignore
 // import Spinner from '../../layouts/Spinner/Spinner.tsx'
 // // @ts-ignore
@@ -45,25 +45,57 @@ const Home = (props: OwnProps) => {
         setIsOpen(false)
         setIndexOfTheBook(0)
     }
+    function ImageCarousel({ images, width }) {
+        return (
+            <Carousel
+                showIndicators
+
+                renderIndicator={(clickHandler, isSelected, index) => (
+                    <li
+                        onClick={clickHandler}
+                        className={`ind ${isSelected ? 'active' : ''}`}
+                        key={index}
+                        role='button'
+                    />
+                )}
+                swipeable={false}
+            >
+                {images.map((img, index) => (
+                    <div key={index}>
+                        <img src={img} className='flex justify-center' id='thumbnail' width={width * 0.95} loading='lazy' alt='book' />
+                    </div>
+                ))}
+            </Carousel>
+        );
+    }
+
+    function ImageComponent({ images, width }) {
+        if (images.length > 1) {
+            return <ImageCarousel images={images} width={width} />;
+        } else {
+            return <img src={images[0]} className='flex justify-center' id='thumbnail' width={width * 0.95} loading='lazy' alt='book' />;
+        }
+    }
     const modal = () => {
         const width = window.innerWidth - (window.innerWidth * 0.2)
-        const headerContent = professionalName
+        const headerContent = details.bagInfoDetails.find(item => item.professionalName === 'book')?.nameOfTheBooks?.[indexOfTheBook - 1]
+        const description = details.bagInfoDetails.find(item => item.professionalName === 'book')?.description
+        console.log(description)
         const bookVideo = `./book/details/book${indexOfTheBook}.mp4`
         const modalBody = (
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center padding'>
+                <span>المحتويات</span>
                 <div>
-                    {indexOfTheBook}
+                    {description?.map((images, index) => (
+                        indexOfTheBook - 1 === index && <ImageComponent key={index} images={images} width={width} />
+                    ))}
                 </div>
-                <div className='thumbnail-container'>
-                    <span>المحتويات</span>
-                    <img src={'./logo6.jpg'} className='item-img' id='thumbnail' width={width} loading='lazy' alt='hackathon' />
-                    <span>الشرح</span>
-                    <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                        <ReactPlayer key='unique-key' width={width} height={'71vh'} url={bookVideo} playing={true} controls />
-                        {/* <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR0MXv32W_pBzaAnQRs7A88Ix-Xp9DsMxPyp1xMcmTa8syFnflJ7m506SZfElcs8w/embed?start=true&loop=true&delayms=2000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> */}
-                    </Col>
-                    {/* <img src={'./jood-bag-desgin.png'} className='item-img' id='thumbnail' width={'500rem'} height={'500rem'} loading='lazy' alt='hackathon' /> */}
-                </div>
+                <div className="padding"></div>
+                <span>الشرح</span>
+                <Col xs={12} sm={12} md={12} className='flex justify-center'>
+                    <ReactPlayer key='unique-key' url={bookVideo} playing={false} controls />
+                    {/* <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR0MXv32W_pBzaAnQRs7A88Ix-Xp9DsMxPyp1xMcmTa8syFnflJ7m506SZfElcs8w/embed?start=true&loop=true&delayms=2000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> */}
+                </Col>
             </div>
         )
         return (

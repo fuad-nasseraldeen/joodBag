@@ -4,7 +4,7 @@
     width: 100vw;
     height: 400vh;
     z-index: 0;
-    top: 50%;
+    /* top: 50%; */
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;

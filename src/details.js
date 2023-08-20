@@ -6,11 +6,16 @@ let joodDetails = {
     {
       name: 'كراسات تعليمية',
       professionalName: 'book',
-      // description: [
-      //   'كراسة المفاهيم الاساسية ',
-      //   'كراسة  الارقام',
-      //   'كراسة الحروف',
-      // ],
+      nameOfTheBooks: [
+        'كراسة المفاهيم الاساسية ',
+        'كراسة الحروف',
+        'كراسة  الارقام',
+      ],
+      description: [
+        ['./logo4.jpg', './logo3.jpg'],
+        ['./logo5.jpg'],
+        ['./logo6.jpg'],
+      ],
       url: ['./book/book1.jpg', './book/book3.jpg', './book/book2.jpg'],
       width: '180',
       height: '240',
