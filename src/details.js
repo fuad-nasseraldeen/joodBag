@@ -72,7 +72,7 @@ let joodDetails = {
     },
     {
       name: 'facebook',
-      url: 'https://www.facebook.com/profile.php?id=61550307714098',
+      url: 'https://www.facebook.com/profile.php?id=61550296917895',
       className: 'fa fa-facebook',
       img: 'https://img.icons8.com/doodle/28/facebook-new.png',
     },
