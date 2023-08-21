@@ -38,8 +38,16 @@ function NavBar() {
                         )
                     })}
                 </div>
-            </div>
 
+            </div>
+            <div className="bg">
+                <img
+                    width={window.innerWidth}
+                    height='180'
+                    src='./logo/with-email-removebg-preview.png'
+                    alt=''
+                ></img>
+            </div>
         </Navbar>
     )
 }

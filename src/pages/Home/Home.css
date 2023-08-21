@@ -4,6 +4,8 @@
     width: 90%;
     padding: 20px;
     flex-direction: column;
+    position: absolute;
+    top: 150px;
 }
 .img-container {
     padding-top: 10rem;

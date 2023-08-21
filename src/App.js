@@ -7,6 +7,7 @@ function App() {
   return (
     <div className='droid-arabic-kufi backgruand' dir='rtl'>
       <NavBar />
+
       <Home />
       <div className='bottom-span tooltip'>
         <span className='tooltiptext'>تواصلوا معنا</span>

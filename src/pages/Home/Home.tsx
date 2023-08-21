@@ -117,6 +117,7 @@ const Home = (props: OwnProps) => {
                 <Row className='container flex justify-center'>
                     <Col>
                         <div className='flex flex-col align-items-center'>
+
                             <h1>{details.name}</h1>
                             <h2>{details.description}</h2>
                             {window.innerWidth <= 600 &&
@@ -166,14 +167,6 @@ const Home = (props: OwnProps) => {
                             )
                         })}
                     </Col>
-                    {/* <Col>
-                        <div className='img-container'>
-                            {window.innerWidth > 600 &&
-                                // <img src="./kids-jood.png" alt=""></img>
-                                <Box3D />
-                            }
-                        </div>
-                    </Col> */}
                 </Row>
                 <div className="white-divider"></div>
                 <Col xs={12} sm={12} md={12} className='flex justify-center'>
