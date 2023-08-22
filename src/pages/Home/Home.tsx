@@ -29,7 +29,7 @@ const Home = (props: OwnProps) => {
     const [indexOfTheBook, setIndexOfTheBook] = useState(0)
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 3000)
+        setTimeout(() => setIsLoading(false), 1600)
     })
 
 
