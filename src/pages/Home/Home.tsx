@@ -46,20 +46,9 @@ const Home = (props: OwnProps) => {
         setIndexOfTheBook(0)
     }
     function ImageCarousel({ images, width }) {
-        return (
-            <Carousel
-                showIndicators
 
-                renderIndicator={(clickHandler, isSelected, index) => (
-                    <li
-                        onClick={clickHandler}
-                        className={`ind ${isSelected ? 'active' : ''}`}
-                        key={index}
-                        role='button'
-                    />
-                )}
-                swipeable={false}
-            >
+        return (
+            <Carousel>
                 {images.map((img, index) => (
                     <div key={index}>
                         <img src={img} className='flex justify-center' id='thumbnail' width={width * 0.95} loading='lazy' alt='book' />
@@ -168,7 +157,7 @@ const Home = (props: OwnProps) => {
                     </Row>
                     <div className="white-divider"></div>
                     <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                        <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
+                        <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={false} controls /></div>
                     </Col>
                 </section>
             )}

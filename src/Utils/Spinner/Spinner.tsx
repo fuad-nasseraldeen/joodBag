@@ -18,8 +18,8 @@ export class Spinner extends React.Component<Props, State> {
                     <ImSpinner9 />
                 </div> */}
 
-                <RevealScroll>
-                    <div className="center-logo reveal fade-bottom">
+                <>
+                    <div className="center-logo scroll active reveal fade-bottom">
                         <img
                             width={window.innerWidth}
                             height='250'
@@ -27,7 +27,7 @@ export class Spinner extends React.Component<Props, State> {
                             alt=''
                         ></img>
                     </div>
-                </RevealScroll>
+                </>
             </div>
 
         )
