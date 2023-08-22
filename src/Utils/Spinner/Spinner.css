@@ -1,0 +1,54 @@
+  .spinner-darkBG {
+    background-color: transparent;
+    /* background-color :rgb(34 33 46 / 84%); */
+    z-index: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 400vh;
+  }
+  
+  .spinner-center {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate(-10%, -10%);
+    animation: spin 2s linear infinite;
+  }
+  .large {
+    font-size: 5rem;
+  }
+  .medium {
+    font-size: 3rem;
+  }
+  .small {
+    font-size: 2rem;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .reveal {
+    position: relative;
+    opacity: 10;
+    
+  }
+  
+  .reveal.active {
+    opacity: 1;
+  }
+  .center-logo {
+    transform: translate(0%, 100%);
+  }
+
+  @keyframes fade-bottom {
+    100% {
+      transform: translateY(250px);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }

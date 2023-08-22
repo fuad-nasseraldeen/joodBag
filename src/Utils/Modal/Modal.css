@@ -85,9 +85,10 @@
     border: none;
     font-size: 18px;
     color: rgb(231 150 84);
-    background: whitesmoke;
+    background: white;
+    /* background: whitesmoke; */
     transition: all 0.25s ease;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    /* box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06); */
     position: absolute;
     right: 0;
     top: 0;

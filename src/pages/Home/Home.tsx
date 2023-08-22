@@ -10,11 +10,11 @@ import Box3D from '../../3d/Three'
 // import ThreeScene from '../../3d/Temps.tsx'
 import ReactPlayer from 'react-player'
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa'
-// // @ts-ignore
-// import Spinner from '../../layouts/Spinner/Spinner.tsx'
+// @ts-ignore
+import Spinner from '../../Utils/Spinner/Spinner.tsx'
 // // @ts-ignore
 // import ScrollToTop from '../../utils/ScrollToTop.tsx'
-// // @ts-ignore
+// // @ts-ignore 
 // import Main from '../Main/Main.tsx'
 
 
@@ -29,7 +29,7 @@ const Home = (props: OwnProps) => {
     const [indexOfTheBook, setIndexOfTheBook] = useState(0)
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 10)
+        setTimeout(() => setIsLoading(false), 3000)
     })
 
 
@@ -80,8 +80,8 @@ const Home = (props: OwnProps) => {
         const width = window.innerWidth - (window.innerWidth * 0.2)
         const headerContent = details.bagInfoDetails.find(item => item.professionalName === 'book')?.nameOfTheBooks?.[indexOfTheBook - 1]
         const description = details.bagInfoDetails.find(item => item.professionalName === 'book')?.description
-
         const bookVideo = `./book/details/book${indexOfTheBook}.mp4`
+
         const modalBody = (
             <div className='flex flex-col items-center padding'>
                 <span>المحتويات</span>
@@ -112,67 +112,66 @@ const Home = (props: OwnProps) => {
     }
     return (
         <React.Fragment>
-            <section id='home'>
-                {modal()}
-                <Row className='container flex justify-center'>
-                    <Col>
-                        <div className='flex flex-col align-items-center'>
+            {isLoading ? (<Spinner size='medium'></Spinner>) : (
+                <section id='home'>
+                    {modal()}
+                    <Row className='container flex justify-center'>
+                        <Col>
+                            <div className='flex flex-col align-items-center'>
+                                <h1>{details.name}</h1>
+                                <h2>{details.description}</h2>
+                                {window.innerWidth <= 600 &&
+                                    <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                    // <Box3D />
+                                }
+                                {/* <div className="white-divider"></div> */}
+                            </div>
+                            {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
+                        </Col>
+                    </Row>
+                    <Row className='container width-100 flex justify-space-evently'>
+                        <Col>
+                            <h2>{details.bagInfoName}</h2>
+                            {details.bagInfoDetails.map((item, i) => {
+                                return (
+                                    <div key={i} className=''>
+                                        <div className="flex align-items-center gap-5 cheked">
+                                            <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/checked-radio-button.png" alt="checked-radio-button" />
+                                            <h3>{item.name}</h3>
+                                        </div>
+                                        <div className="flex justify-center gap-10 flex-wrap">
+                                            {item.url && (
 
-                            <h1>{details.name}</h1>
-                            <h2>{details.description}</h2>
-                            {window.innerWidth <= 600 &&
-                                <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
-                                // <Box3D />
-                            }
-                            {/* <div className="white-divider"></div> */}
-                        </div>
-                        {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
-                    </Col>
-                </Row>
-                <Row className='container width-100 flex justify-space-evently'>
-                    <Col>
-                        <h2>{details.bagInfoName}</h2>
-                        {details.bagInfoDetails.map((item, i) => {
-                            return (
-                                <div key={i} className=''>
-                                    <div className="flex align-items-center gap-5 cheked">
-                                        <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/checked-radio-button.png" alt="checked-radio-button" />
-                                        <h3>{item.name}</h3>
+                                                item.url.map((entity, i) => {
+                                                    return (
+                                                        <div className="tooltip reveal fade-right card" onClick={() => prepareModal(item.professionalName, i + 1
+                                                        )}>
+                                                            <RevealScroll>
+                                                                {item.professionalName === 'book' && <span className="tooltiptext">اضغط لعرض التفاصيل</span>}
+                                                                <img
+                                                                    width={isMobile ? (parseInt(item.width) * item.mobileDemention) + 'px' : item.width + 'px'}
+                                                                    height={isMobile ? (parseInt(item.height) * item.mobileDemention) + 'px' : item.height + 'px'}
+                                                                    src={entity} alt="" >
+
+                                                                </img>
+                                                            </RevealScroll>
+                                                        </div>
+                                                    )
+                                                })
+                                            )
+                                            }
+                                        </div>
                                     </div>
-                                    <div className="flex justify-center gap-10 flex-wrap">
-                                        {item.url && (
-
-                                            item.url.map((entity, i) => {
-                                                return (
-                                                    <div className="tooltip reveal fade-bottom card" onClick={() => prepareModal(item.professionalName, i + 1)}>
-                                                        <RevealScroll>
-                                                            {item.professionalName === 'book' && <span className="tooltiptext">اضغط لعرض التفاصيل</span>}
-                                                            <img
-                                                                width={isMobile ? (parseInt(item.width) * item.mobileDemention) + 'px' : item.width + 'px'}
-                                                                height={isMobile ? (parseInt(item.height) * item.mobileDemention) + 'px' : item.height + 'px'}
-                                                                src={entity} alt="" >
-
-                                                            </img>
-                                                        </RevealScroll>
-                                                    </div>
-                                                )
-                                            })
-
-
-                                        )
-                                        }
-                                    </div>
-
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
+                        </Col>
+                    </Row>
+                    <div className="white-divider"></div>
+                    <Col xs={12} sm={12} md={12} className='flex justify-center'>
+                        <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
                     </Col>
-                </Row>
-                <div className="white-divider"></div>
-                <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                    <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={true} controls /></div>
-                </Col>
-            </section>
+                </section>
+            )}
         </React.Fragment >
     )
 }
