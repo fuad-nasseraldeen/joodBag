@@ -114,8 +114,8 @@ const Home = (props: OwnProps) => {
                                     <h1>{details.name}</h1>
                                     <h2>{details.description}</h2>
                                     {window.innerWidth <= 600 &&
-                                        <div className='flex' style={{ position: 'relative' }}>
-                                            <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                        <div className='flex' style={{ position: 'relative', paddingTop: '45px' }}>
+                                            <img width="250" height="180" style={{ paddingRight: '5px' }} src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
                                             <img
                                                 width="120px"
                                                 height="120px"
@@ -124,7 +124,7 @@ const Home = (props: OwnProps) => {
                                                 style={{
                                                     position: 'absolute',
                                                     top: '-20px',
-                                                    left: '220px'
+                                                    left: '175px'
                                                 }}
                                             ></img>
                                         </div>
