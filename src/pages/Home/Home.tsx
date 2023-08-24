@@ -117,6 +117,10 @@ const Home = (props: OwnProps) => {
                                         <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
                                         // <Box3D />
                                     }
+                                    <div className="flex  shekel">
+                                        <span>سعر الحقيبة: 220 </span>
+                                        <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/shekel.png" alt="shekel" />
+                                    </div>
                                     {/* <div className="white-divider"></div> */}
                                 </div>
                                 {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
@@ -177,6 +181,35 @@ const Home = (props: OwnProps) => {
                     <Col xs={12} sm={12} md={12} className='flex justify-center'>
                         <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'75%'} url={'./jood-bag-details.mp4'} playing={false} controls /></div>
                     </Col>
+
+                    <div className="note">
+                        <ol>
+                            <img
+                                className='margin-top-70'
+                                src='./note.png'
+                                width={'70px'}
+                                alt=''
+                            ></img>
+                            <li>
+                                <div className="wts flex align-items-center">
+                                    <span>للتواصل معنا عبر الواتس اب الرجاء الضغط على الرابط ادناه</span>
+                                    <a
+                                        href={details.whatsapp.url}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className=''
+                                    >
+                                        <img src={details.whatsapp.img} width={28} className='margin-whatsapp' alt='whatsapp' />
+                                    </a>
+                                </div>
+                            </li>
+
+                            <span className='bold'> طرق الدفع المتوفرة :</span>
+                            <li>Bit</li>
+                            <li>نقدي لمندوب التوصيل</li>
+                            <li>تحويل بنكي</li>
+                        </ol>
+                    </div>
                 </section>
             )}
         </React.Fragment >
