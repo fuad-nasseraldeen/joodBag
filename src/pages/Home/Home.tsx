@@ -124,7 +124,7 @@ const Home = (props: OwnProps) => {
                                                 style={{
                                                     position: 'absolute',
                                                     top: '-20px',
-                                                    left: '240px'
+                                                    left: '220px'
                                                 }}
                                             ></img>
                                         </div>
