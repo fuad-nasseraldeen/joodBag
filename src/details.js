@@ -9,8 +9,8 @@ let joodDetails = {
       icon: './books.png',
       nameOfTheBooks: [
         'كراسة المفاهيم الاساسية ',
-        'كراسة الحروف',
         'كراسة  الارقام',
+        'كراسة الحروف',
       ],
       description: [
         ['./logo4.jpg', './logo3.jpg'],
