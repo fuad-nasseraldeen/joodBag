@@ -48,13 +48,15 @@ const Home = (props: OwnProps) => {
     function ImageCarousel({ images, width }) {
 
         return (
-            <Carousel>
-                {images.map((img, index) => (
-                    <div key={index}>
-                        <img src={img} className='flex justify-center' id='thumbnail' width={width * 0.95} loading='lazy' alt='book' />
-                    </div>
-                ))}
-            </Carousel>
+            <div dir='ltr'>
+                <Carousel>
+                    {images.map((img, index) => (
+                        <div key={index}>
+                            <img src={img} className='flex justify-center width-100' id='thumbnail' loading='lazy' alt='book' />
+                        </div>
+                    ))}
+                </Carousel>
+            </div>
         );
     }
 
@@ -62,11 +64,11 @@ const Home = (props: OwnProps) => {
         if (images.length > 1) {
             return <ImageCarousel images={images} width={width} />;
         } else {
-            return <img src={images[0]} className='flex justify-center' id='thumbnail' width={width * 0.95} loading='lazy' alt='book' />;
+            return <img src={images[0]} className='img-center width-100' id='thumbnail' loading='lazy' alt='book' />;
         }
     }
     const modal = () => {
-        const width = window.innerWidth - (window.innerWidth * 0.2)
+        const width = window.innerWidth - (window.innerWidth * 0.0)
         const headerContent = details.bagInfoDetails.find(item => item.professionalName === 'book')?.nameOfTheBooks?.[indexOfTheBook - 1]
         const description = details.bagInfoDetails.find(item => item.professionalName === 'book')?.description
         const bookVideo = `./book/details/book${indexOfTheBook}.mp4`
@@ -99,25 +101,28 @@ const Home = (props: OwnProps) => {
             </div>
         )
     }
+
     return (
         <React.Fragment>
             {isLoading ? (<Spinner size='medium'></Spinner>) : (
                 <section id='home'>
                     {modal()}
-                    <Row className='container flex justify-center'>
-                        <Col>
-                            <div className='flex flex-col align-items-center'>
-                                <h1>{details.name}</h1>
-                                <h2>{details.description}</h2>
-                                {window.innerWidth <= 600 &&
-                                    <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
-                                    // <Box3D />
-                                }
-                                {/* <div className="white-divider"></div> */}
-                            </div>
-                            {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
-                        </Col>
-                    </Row>
+                    <RevealScroll>
+                        <Row className='container flex justify-center reveal fade-left'>
+                            <Col>
+                                <div className='flex flex-col align-items-center'>
+                                    <h1>{details.name}</h1>
+                                    <h2>{details.description}</h2>
+                                    {window.innerWidth <= 600 &&
+                                        <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                        // <Box3D />
+                                    }
+                                    {/* <div className="white-divider"></div> */}
+                                </div>
+                                {/* <img width={'180px'} height={'140px'} src="./front-bag-main.png" alt=""></img> */}
+                            </Col>
+                        </Row>
+                    </RevealScroll>
                     <Row className='container width-100 flex justify-space-evently'>
                         <Col>
                             <h2>{details.bagInfoName}</h2>
@@ -127,13 +132,18 @@ const Home = (props: OwnProps) => {
                                         <div className="flex align-items-center gap-5 cheked">
                                             <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/checked-radio-button.png" alt="checked-radio-button" />
                                             <h3>{item.name}</h3>
+                                            <img
+                                                src={item.icon}
+                                                width={'40px'}
+                                                alt=''
+                                            ></img>
                                         </div>
                                         <div className="flex justify-center gap-10 flex-wrap">
                                             {item.url && (
 
                                                 item.url.map((entity, i) => {
                                                     return (
-                                                        <div className="tooltip reveal fade-right card" onClick={() => prepareModal(item.professionalName, i + 1
+                                                        <div className={`tooltip ${item.fade} reveal card`} onClick={() => prepareModal(item.professionalName, i + 1
                                                         )}>
                                                             <RevealScroll>
                                                                 {item.professionalName === 'book' && <span className="tooltiptext">اضغط لعرض التفاصيل</span>}
@@ -156,8 +166,16 @@ const Home = (props: OwnProps) => {
                         </Col>
                     </Row>
                     <div className="white-divider"></div>
+                    <div className="flex justify-center align-items-center">
+                        <span className='span-book'>محتويات الحقيبة</span>
+                        <img
+                            src='./box-of-book.png'
+                            width={'60px'}
+                            alt=''
+                        ></img>
+                    </div>
                     <Col xs={12} sm={12} md={12} className='flex justify-center'>
-                        <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'71vh'} url={'./jood-bag-details.mp4'} playing={false} controls /></div>
+                        <div className="border-radius"><ReactPlayer style={{ borderRadius: '16px' }} key='unique-key' width={'100%'} height={'75%'} url={'./jood-bag-details.mp4'} playing={false} controls /></div>
                     </Col>
                 </section>
             )}

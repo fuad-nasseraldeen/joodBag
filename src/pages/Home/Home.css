@@ -127,7 +127,7 @@ ol {
   
   @keyframes fade-right {
     0% {
-      transform: translateX(100px);
+      transform: translateX(50px);
       opacity: 0;
     }
     100% {
@@ -139,3 +139,121 @@ ol {
   .border-radius {
     border-radius: 50%;
   }
+
+
+  
+/*----------------------------------------------*/
+/*	Carousel - Carousel
+/*----------------------------------------------*/
+.item-wrapper {
+  margin: 5px;
+  transition: all 0.5s ease;
+  opacity: 0.85;
+  transform: scale(0.95);
+}
+ .slick-dots {
+  bottom: -40px;
+
+}
+ .slick-dots li button:before {
+  font-size: 15px;
+  line-height: 30px;
+
+}
+.slick-center {
+  .item-wrapper {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.slick-arrow {
+  &.slick-prev, &.slick-next {
+     top: 50%;
+     /* background-color: #ddd; */
+     opacity: 0.9;
+     width: 50px;
+     /* height: 200px; */
+     z-index: 500;
+     &:hover {
+       opacity: 1;
+     }
+ 
+     &.slick-disabled:hover {
+       opacity: 0.5;
+       cursor: default;
+     }
+    }
+  &.slick-prev, &.slick-next {
+    top: 50%;
+    /* background-color: #ddd; */
+    opacity: 0.9;
+    width: 50px;
+    /* height: 200px; */
+    z-index: 500;
+    &:hover {
+     opacity: 1;
+    }
+
+    &.slick-disabled:hover {
+     opacity: 0.5;
+     cursor: default;
+    }
+  }
+
+  &.slick-prev {
+    border-bottom-right-radius: 72px;
+    border-top-right-radius: 72px;
+    left: 0;
+  }
+
+  &.slick-next {
+    border-bottom-left-radius: 72px;
+    border-top-left-radius: 72px;
+    right: 0;
+  }
+
+  &.slick-next:before {
+     position: absolute;
+     font-size: 35px;
+     top: 40%;
+     margin-left: -15px;
+  }
+  &.slick-prev:before {
+     position: absolute;
+     font-size: 35px;
+     top: 40%;
+     margin-left: 5px;
+  }
+}
+
+.carousel .control-dots {
+  z-index: 3;
+}
+.carousel .slide img {
+
+  vertical-align: top;
+  /* height: 40rem; */
+  border: 0;
+  border-radius: 4%;
+}
+
+.carousel .carousel-status {
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #000;
+  font-size: 1.4rem;
+  text-shadow: none;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.img-center {
+  display: flex;
+  justify-content: center;
+  border-radius: 4%;
+}
+.span-book {
+  padding-top: 20px;
+  font-size: 20px;
+}
