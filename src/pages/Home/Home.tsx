@@ -114,12 +114,26 @@ const Home = (props: OwnProps) => {
                                     <h1>{details.name}</h1>
                                     <h2>{details.description}</h2>
                                     {window.innerWidth <= 600 &&
-                                        <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                        <div className='flex' style={{ position: 'relative' }}>
+                                            <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
+                                            <img
+                                                width="100"
+                                                height="100"
+                                                src="./money.png"
+                                                alt=""
+                                                style={{
+                                                    position: 'absolute',
+                                                    top: '-50px',
+                                                    left: '210px'
+                                                }}
+                                            ></img>
+                                        </div>
                                         // <Box3D />
                                     }
                                     <div className="flex  shekel">
-                                        <span>سعر الحقيبة: 220 </span>
-                                        <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/shekel.png" alt="shekel" />
+
+                                        {/* <span>سعر الحقيبة: 220 </span> */}
+                                        {/* <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/shekel.png" alt="shekel" /> */}
                                     </div>
                                     {/* <div className="white-divider"></div> */}
                                 </div>
@@ -186,8 +200,8 @@ const Home = (props: OwnProps) => {
                         <ol>
                             <img
                                 className='margin-top-70'
-                                src='./note.png'
-                                width={'70px'}
+                                src='./note4.png'
+                                width={'100px'}
                                 alt=''
                             ></img>
                             <li>

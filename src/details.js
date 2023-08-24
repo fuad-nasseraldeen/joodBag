@@ -44,7 +44,7 @@ let joodDetails = {
       fade: 'fade-right',
     },
     {
-      name: 'بطاقات',
+      name: ' بطاقات للتدريب على القص ',
       icon: './cards-cut.png',
       description: ['بطاقات لتدريب على مهارات القص بدرجات صعوبة مختلفة'],
       url: ['./cards.png'],
