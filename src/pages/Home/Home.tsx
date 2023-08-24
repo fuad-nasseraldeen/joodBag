@@ -117,14 +117,14 @@ const Home = (props: OwnProps) => {
                                         <div className='flex' style={{ position: 'relative' }}>
                                             <img width="250" height="180" src="./jood-bag-withoutBG-removebg-preview.png" alt=""></img>
                                             <img
-                                                width="100"
-                                                height="100"
+                                                width="120px"
+                                                height="120px"
                                                 src="./money.png"
                                                 alt=""
                                                 style={{
                                                     position: 'absolute',
-                                                    top: '-70px',
-                                                    left: '220px'
+                                                    top: '-20px',
+                                                    left: '240px'
                                                 }}
                                             ></img>
                                         </div>
