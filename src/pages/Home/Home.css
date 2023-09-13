@@ -4,6 +4,7 @@
     width: 90%;
     padding: 20px;
     flex-direction: column;
+    backface-visibility: hidden;
 }
 .img-container {
     padding-top: 10rem;
